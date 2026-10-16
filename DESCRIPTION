@@ -1,6 +1,6 @@
 Package: RPesto
 Title: Phylogenetic Estimation of Shifts in the Tempo of Origination
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: 
     c(person("Bj\u00F8rn Tore", "Kopperud", role = c("aut", "cre"), email = "kopperud@protonmail.com"),
       person("Sebastian", "H\u00F6hna", role = c("aut")))
@@ -14,7 +14,7 @@ SystemRequirements: Cargo (Rust's package manager), rustc
 Depends: R (>= 4.2)
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: yes
-Packaged: 2026-08-03 11:46:34 UTC; bjorntko
+Packaged: 2026-10-16 13:35:24 UTC; bjorntko
 Author: Bjørn Tore Kopperud [aut, cre],
   Sebastian Höhna [aut]
 Maintainer: Bjørn Tore Kopperud <kopperud@protonmail.com>

@@ -1,7 +1,8 @@
-use core::f64;
+const SQRT_2: f64 = core::f64::consts::SQRT_2;
 
 //use statrs::distribution::{LogNormal,ContinuousCDF};
 use crate::erf::erfc_inv;
+use statrs::distribution::{ContinuousCDF, LogNormal};
 
 //use extendr_api::prelude::*;
 
@@ -9,7 +10,7 @@ pub fn lognormal_quantile(p: f64, location: f64, sigma: f64) -> f64 {
     if p == 0.0 {
         0.0
     } else if p < 1.0 {
-        (location - (sigma * f64::consts::SQRT_2 * erfc_inv(2.0 * p))).exp()
+        (location - (sigma * SQRT_2 * erfc_inv(2.0 * p))).exp()
     } else if p == 1.0 {
         f64::INFINITY
     } else {
@@ -53,14 +54,14 @@ mod tests {
 pub fn make_quantiles(location: f64, sigma: f64, n: usize) -> Vec<f64> {
     let mut quantiles = Vec::new();
 
-    //let d = LogNormal::new(location, sigma).expect("expected to create lognormal distribution");
+    let d = LogNormal::new(location, sigma).expect("expected to create lognormal distribution");
 
     let step = 0.5;
 
     for i in 1..(n + 1) {
         let p = ((i as f64) - step) / (n as f64);
-        //let q = d.inverse_cdf(p);
-        let q = lognormal_quantile(p, location, sigma);
+        //let q = lognormal_quantile(p, location, sigma);
+        let q = d.inverse_cdf(p);
         quantiles.push(q);
     }
 
