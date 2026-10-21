@@ -14,7 +14,7 @@ SystemRequirements: Cargo (Rust's package manager), rustc
 Depends: R (>= 4.2)
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: yes
-Packaged: 2026-10-16 13:35:24 UTC; bjorntko
+Packaged: 2026-10-21 12:49:13 UTC; bjorntko
 Author: Bjørn Tore Kopperud [aut, cre],
   Sebastian Höhna [aut]
 Maintainer: Bjørn Tore Kopperud <kopperud@protonmail.com>
